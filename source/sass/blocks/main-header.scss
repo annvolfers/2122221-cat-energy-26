@@ -1,0 +1,18 @@
+@use "./global/variables.scss";
+@use "./global/base.scss";
+
+.main-header {
+  min-height: 65px;
+
+  @media (min-width: variables.$tablet-width) {
+    min-height: 78px;
+  }
+
+  @media (min-width: variables.$desktop-width) {
+    min-height: 112px;
+  }
+}
+
+.main-header__nav {
+  @include base.container;
+}

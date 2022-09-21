@@ -1,0 +1,79 @@
+@use "./global/variables.scss";
+@use "./global/base.scss";
+
+.contacts {
+  background-color: variables.$white--lighten;
+}
+
+.contacts__wrapper {
+  padding: 0 20px;
+
+  @include base.container;
+
+  @media (min-width: variables.$tablet-width) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 58px 32px 55px 30px;
+  }
+
+  @media (min-width: variables.$desktop-width) {
+    padding: 58px 110px 57px;
+  }
+}
+
+.contacts__logo {
+  position: relative;
+  padding: 29px 56px 22px;
+
+  @media (max-width: variables.$mobile-width-only) {
+    &::before {
+      content: "";
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      height: 1px;
+      background-color: variables.$white--darkest;
+    }
+  }
+
+  @media (min-width: variables.$tablet-width) {
+    padding: 0;
+  }
+}
+
+.contacts__logo-link {
+  display: block;
+  padding: 10px;
+
+  &:hover,
+  &:focus {
+    opacity: 0.8;
+  }
+
+  &:active {
+    opacity: 0.6;
+  }
+
+  @media (min-width: variables.$tablet-width) {
+    padding: 0;
+  }
+}
+
+.contacts__logo-text {
+  display: block;
+  width: 128px;
+  height: 24px;
+  margin: auto;
+}
+
+.contacts__social {
+  @media (min-width: variables.$tablet-width) {
+    margin-left: 25px;
+  }
+
+  @media (min-width: variables.$desktop-width) {
+    margin-left: 29px;
+  }
+}

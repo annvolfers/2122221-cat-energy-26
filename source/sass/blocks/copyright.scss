@@ -1,0 +1,44 @@
+@use "./global/variables.scss";
+
+.copyright {
+  padding: 21px 0 22px;
+
+  @media (min-width: variables.$tablet-width) {
+    padding: 0;
+  }
+}
+
+.copyright__link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-decoration: none;
+
+  @media (min-width: variables.$tablet-width) {
+    gap: 22px;
+  }
+}
+
+.copyright__text {
+  margin: 0;
+  font-family: "Arial", sans-serif;
+  font-size: 16px;
+  color: variables.$gray--dark;
+}
+
+.copyright__link:active .copyright__text {
+  opacity: 0.3;
+}
+
+.copyright__icon {
+  color: variables.$gray;
+}
+
+.copyright__link:hover .copyright__icon,
+.copyright__link:focus .copyright__icon {
+  color: variables.$green;
+}
+
+.copyright__link:active .copyright__icon {
+  opacity: 0.3;
+}

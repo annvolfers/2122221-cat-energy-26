@@ -1,4 +1,19 @@
-// Начните писать стили здесь
-body {
-  background-color: #fff;
-}
+/* global */
+@use "./global/fonts.scss";
+@use "./global/base.scss";
+
+/* blocks */
+@use "./blocks/about.scss";
+@use "./blocks/button.scss";
+@use "./blocks/contacts.scss";
+@use "./blocks/copyright.scss";
+@use "./blocks/example.scss";
+@use "./blocks/index-header.scss";
+@use "./blocks/main-footer.scss";
+@use "./blocks/main-header.scss";
+@use "./blocks/main-index.scss";
+@use "./blocks/main-nav.scss";
+@use "./blocks/menu.scss";
+@use "./blocks/page.scss";
+@use "./blocks/partnership.scss";
+@use "./blocks/social.scss";

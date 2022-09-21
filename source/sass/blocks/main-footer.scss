@@ -1,0 +1,6 @@
+@use "./global/variables.scss";
+@use "./global/base.scss";
+
+.main-footer__partnership {
+  @include base.container;
+}

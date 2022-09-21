@@ -1,0 +1,46 @@
+@use "./global/variables.scss";
+
+.social {
+  position: relative;
+  padding: 20px 74px 18px;
+
+  @media (max-width: variables.$mobile-width-only) {
+    &::before {
+      content: "";
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      height: 1px;
+      background-color: variables.$white--darkest;
+    }
+  }
+
+  @media (min-width: variables.$tablet-width) {
+    padding: 0;
+  }
+}
+
+.social__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 0;
+  list-style-type: none;
+}
+
+.social__icon {
+  color: variables.$gray;
+}
+
+.social__link:hover .social__icon,
+.social__link:focus .social__icon {
+  color: variables.$green;
+}
+
+.social__link:active .social__icon {
+  opacity: 0.3;
+}

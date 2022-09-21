@@ -1,0 +1,108 @@
+@use "./global/variables.scss";
+@use "./global/base.scss";
+
+.partnership {
+  @media (min-width: variables.$desktop-width) {
+    position: relative;
+  }
+}
+
+.partnership__text-wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: space-between;
+  padding: 26px 24px 26px 20px;
+  background-color: variables.$white--lightest;
+
+  @media (min-width: variables.$tablet-width) {
+    align-items: center;
+    gap: 30px;
+    padding: 56px 70px 62px;
+  }
+
+  @media (min-width: variables.$desktop-width) {
+    position: absolute;
+    top: 49%;
+    left: 110px;
+    gap: 96px;
+    max-width: 600px;
+    max-height: 300px;
+    padding: 58px 80px 61px;
+    box-sizing: border-box;
+    transform: translateY(-51%);
+    overflow: scroll;
+  }
+}
+
+.partnership__title {
+  margin: 0;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  text-transform: uppercase;
+  color: variables.$gray--darkest;
+
+  @media (min-width: variables.$tablet-width) {
+    font-size: 20px;
+    line-height: 26px;
+  }
+}
+
+.partnership__address {
+  justify-self: end;
+}
+
+.partnership__address-text {
+  display: grid;
+  margin: 0;
+  font-family: "Arial", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  color: variables.$gray--dark;
+
+  @media (min-width: variables.$tablet-width) {
+    font-size: 16px;
+    text-align: right;
+  }
+
+  @media (min-width: variables.$desktop-width) {
+    text-align: left;
+  }
+}
+
+.partnership__street {
+  @media (min-width: variables.$tablet-width) {
+    margin-bottom: 19px;
+  }
+}
+
+.partnership__map {
+  height: 362px;
+
+  @media (min-width: variables.$tablet-width) {
+    height: 400px;
+  }
+}
+
+.partnership__map-iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.partnership__map--nojs .partnership__map-iframe {
+  display: none;
+}
+
+.partnership__map-image {
+  display: none;
+}
+
+.partnership__map--nojs .partnership__map-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

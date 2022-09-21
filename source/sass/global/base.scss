@@ -1,0 +1,45 @@
+@use "./global/variables.scss";
+
+@mixin container {
+  max-width: variables.$max-width;
+  margin-right: auto;
+  margin-left: auto;
+  box-sizing: border-box;
+}
+
+@mixin visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.visually-hidden {
+  @include visually-hidden;
+}
+
+.title {
+  font-weight: inherit;
+  font-size: 36px;
+  line-height: 36px;
+
+  @media (min-width: variables.$tablet-width) {
+    font-size: 60px;
+    line-height: 60px;
+  }
+}
+
+.subtitle {
+  font-weight: inherit;
+  font-size: 36px;
+  line-height: 40px;
+
+  @media (min-width: variables.$tablet-width) {
+    font-size: 60px;
+    line-height: 60px;
+  }
+}

@@ -1,0 +1,32 @@
+@use "./global/variables.scss";
+
+.button {
+  display: inline-block;
+  width: 100%;
+  padding: 11px;
+  box-sizing: border-box;
+  color: variables.$white--lightest;
+  background-color: variables.$green;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+
+  @media (min-width: variables.$tablet-width) {
+    padding: 17px;
+    font-size: 20px;
+    line-height: 20px;
+  }
+
+  &--primary {
+    &:hover,
+    &:focus {
+      background-color: variables.$green--dark;
+    }
+
+    &:active {
+      color: rgba(variables.$white--lightest, 0.3);
+    }
+  }
+
+  // &--secondary {}
+}

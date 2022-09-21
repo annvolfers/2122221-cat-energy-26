@@ -1,0 +1,43 @@
+@use "./global/variables.scss";
+@use "./global/base.scss";
+
+.main-index__header {
+  margin-bottom: 20px;
+
+  @media (min-width: variables.$tablet-width) {
+    margin-bottom: 0;
+  }
+
+  @media (min-width: variables.$desktop-width) {
+    margin-top: -112px;
+    margin-bottom: 82px;
+  }
+}
+
+.main-index__menu {
+  margin-bottom: 20px;
+
+  @include base.container;
+
+  @media (min-width: variables.$tablet-width) {
+    margin-bottom: 45px;
+  }
+
+  @media (min-width: variables.$desktop-width) {
+    margin-bottom: 71px;
+  }
+}
+
+.main-index__about {
+  margin-bottom: 49px;
+
+  @include base.container;
+
+  @media (min-width: variables.$tablet-width) {
+    margin-bottom: 43px;
+  }
+
+  @media (min-width: variables.$desktop-width) {
+    margin-bottom: 69px;
+  }
+}

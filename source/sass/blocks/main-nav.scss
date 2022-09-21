@@ -59,15 +59,8 @@
   display: flex;
   padding: 23px 0;
 
-  @media (min-width: variables.$tablet-width) {
-    gap: 12px;
-    align-items: center;
-    margin-bottom: 2px;
-    padding: 0;
-  }
-
-  @media (min-width: variables.$desktop-width) {
-    margin-bottom: 0;
+  &:not([href]) {
+    pointer-events: none;
   }
 
   &:hover,
@@ -77,6 +70,17 @@
 
   &:active {
     opacity: 0.6;
+  }
+
+  @media (min-width: variables.$tablet-width) {
+    gap: 12px;
+    align-items: center;
+    margin-bottom: 2px;
+    padding: 0;
+  }
+
+  @media (min-width: variables.$desktop-width) {
+    margin-bottom: 0;
   }
 }
 

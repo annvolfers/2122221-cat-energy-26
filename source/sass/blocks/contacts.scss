@@ -47,6 +47,10 @@
   display: block;
   padding: 10px;
 
+  &:not([href]) {
+    pointer-events: none;
+  }
+
   &:hover,
   &:focus {
     opacity: 0.8;

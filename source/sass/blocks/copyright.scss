@@ -12,11 +12,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 22px;
   text-decoration: none;
-
-  @media (min-width: variables.$tablet-width) {
-    gap: 22px;
-  }
 }
 
 .copyright__text {
@@ -31,6 +28,7 @@
 }
 
 .copyright__icon {
+  flex-shrink: 0;
   color: variables.$gray;
 }
 

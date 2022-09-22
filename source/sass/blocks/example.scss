@@ -90,11 +90,13 @@
 .example__list {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 32px;
   margin-top: 0;
   margin-bottom: 20px;
 
   @media (min-width: variables.$tablet-width) {
+    justify-content: flex-start;
     gap: 42px;
     margin-bottom: 0;
   }
@@ -161,6 +163,7 @@
   @media (min-width: variables.$tablet-width) {
     display: flex;
     flex-direction: column;
+    flex-shrink: 0;
     gap: 9px;
     padding-right: 3px;
     padding-bottom: 6px;

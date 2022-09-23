@@ -1,0 +1,172 @@
+@use "./global/variables.scss";
+
+.additional-products {
+  padding: 25px 20px 35px;
+
+  @media (min-width: variables.$tablet-width) {
+    padding: 68px 30px 77px;
+  }
+
+  @media (min-width: variables.$desktop-width) {
+    display: grid;
+    grid-template-areas: "title title"
+      "list gift";
+    grid-template-columns: 73% 20%;
+    justify-content: space-between;
+    padding: 77px 110px 85px;
+  }
+}
+
+.additional-products__title {
+  display: inline-block;
+  position: relative;
+  margin: 0;
+  margin-bottom: 35px;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 24px;
+
+  &::before {
+    @media (min-width: variables.$tablet-width) {
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: 100%;
+      width: 1000%;
+      height: 2px;
+      margin-top: 3px;
+      background-color: variables.$green;
+    }
+
+    @media (min-width: variables.$desktop-width) {
+      right: calc(100% + 35px);
+    }
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: calc(100% + 22px);
+    width: 1000%;
+    height: 2px;
+    margin-top: 3px;
+    background-color: variables.$green;
+
+    @media (min-width: variables.$tablet-width) {
+      left: 100%;
+    }
+
+    @media (min-width: variables.$desktop-width) {
+      left: calc(100% + 35px);
+    }
+  }
+
+  @media (min-width: variables.$tablet-width) {
+    margin-bottom: 80px;
+    padding: 0 35px;
+    font-size: 36px;
+    line-height: 36px;
+  }
+
+  @media (min-width: variables.$desktop-width) {
+    grid-area: title;
+    justify-self: start;
+    padding: 0;
+  }
+}
+
+.additional-products__list {
+  position: relative;
+  margin: 0;
+  margin-bottom: 35px;
+  padding: 0;
+  list-style-type: none;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 1px;
+    background-color: variables.$gray--lighten;
+  }
+
+  @media (min-width: variables.$tablet-width) {
+    margin-bottom: 68px;
+  }
+
+  @media (min-width: variables.$desktop-width) {
+    grid-area: list;
+    margin-bottom: 0;
+  }
+}
+
+.additional-products__gift {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  min-height: 290px;
+  margin: 0;
+  padding: 59px 61px 43px 58px;
+  box-sizing: border-box;
+  font-family: "Arial", sans-serif;
+  font-size: 16px;
+  line-height: 20px;
+  color: variables.$white--lightest;
+  text-align: center;
+  /* stylelint-disable */
+  background-image: linear-gradient(to bottom, rgba(variables.$green, 0.85), 0%, rgba(variables.$green, 0.85) 100%),
+    image-set(url("../img/catalog/gift-bg-mobile@2x.webp") 2x,
+      url("../img/catalog/gift-bg-mobile.webp") 1x,
+      url("../img/catalog/gift-bg-mobile@2x.jpg") 2x,
+      url("../img/catalog/gift-bg-mobile.jpg") 1x);
+  /* stylelint-enable */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  &::before {
+    content: "";
+    width: 78px;
+    height: 80px;
+    background-image: url("../img/catalog/icon-gift.svg");
+
+    @media (min-width: variables.$tablet-width) {
+      padding-bottom: 7px;
+    }
+  }
+
+  @media (min-width: variables.$tablet-width) {
+    flex-direction: row;
+    min-height: 200px;
+    padding: 64px 126px 61px 79px;
+    text-align: left;
+    /* stylelint-disable */
+    background-image: linear-gradient(to bottom, rgba(variables.$green, 0.85), 0%, rgba(variables.$green, 0.85) 100%),
+      image-set(url("../img/catalog/gift-bg-tablet@2x.webp") 2x,
+        url("../img/catalog/gift-bg-tablet.webp") 1x,
+        url("../img/catalog/gift-bg-tablet@2x.jpg") 2x,
+        url("../img/catalog/gift-bg-tablet.jpg") 1x);
+    /* stylelint-enable */
+  }
+
+  @media (min-width: variables.$tablet-width) {
+    grid-area: gift;
+    align-self: start;
+    flex-direction: column;
+    min-height: 289px;
+    padding: 56px 43px 42px 40px;
+    text-align: center;
+    /* stylelint-disable */
+    background-image: linear-gradient(to bottom, rgba(variables.$green, 0.85), 0%, rgba(variables.$green, 0.85) 100%),
+      image-set(url("../img/catalog/gift-bg-mobile@2x.webp") 2x,
+        url("../img/catalog/gift-bg-mobile.webp") 1x,
+        url("../img/catalog/gift-bg-mobile@2x.jpg") 2x,
+        url("../img/catalog/gift-bg-mobile.jpg") 1x);
+    /* stylelint-enable */
+  }
+}

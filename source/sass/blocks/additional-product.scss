@@ -1,0 +1,120 @@
+@use "./global/variables.scss";
+
+.additional-product {
+  position: relative;
+  padding: 13px 0 19px;
+
+  &::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 1px;
+    background-color: variables.$gray--lighten;
+
+    @media (min-width: variables.$tablet-width) {
+      content: none;
+    }
+
+    @media (min-width: variables.$desktop-width) {
+      content: "";
+    }
+  }
+
+  @media (min-width: variables.$tablet-width) {
+    display: grid;
+    grid-template-areas: "title description"
+      "button button";
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: space-between;
+    gap: 21px;
+    padding: 26px 37px 27px;
+    border: 1px solid variables.$gray--lighten;
+    border-top: none;
+  }
+
+  @media (min-width: variables.$desktop-width) {
+    grid-template-areas: "title description button";
+    grid-template-columns: 34% 34% 27%;
+    align-items: center;
+    padding: 15px 0 17px;
+    border: none;
+  }
+}
+
+.additional-product__title {
+  margin: 0;
+  margin-bottom: 13px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 16px;
+  text-transform: uppercase;
+  color: variables.$gray--darken;
+
+  @media (min-width: variables.$tablet-width) {
+    grid-area: title;
+    margin: 0;
+    font-size: 20px;
+    line-height: 20px;
+  }
+}
+
+.additional-product__description-wrapper {
+  display: grid;
+  grid-template-columns: 45% 45%;
+  justify-content: space-between;
+  margin-bottom: 15px;
+
+  @media (min-width: variables.$tablet-width) {
+    grid-area: description;
+    grid-template-columns: 70% 22%;
+    margin: 0;
+    padding-top: 4px;
+  }
+
+  @media (min-width: variables.$desktop-width) {
+    grid-template-columns: 73% 20%;
+    align-items: center;
+  }
+}
+
+.additional-product__description {
+  margin: 0;
+  font-family: "Arial", sans-serif;
+  line-height: 14px;
+  color: variables.$gray--dark;
+
+  @media (min-width: variables.$tablet-width) {
+    justify-self: end;
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  @media (min-width: variables.$desktop-width) {
+    justify-self: start;
+  }
+}
+
+.additional-product__price {
+  justify-self: end;
+  margin: 0;
+  font-family: "Arial", sans-serif;
+  line-height: 14px;
+  color: variables.$gray--dark;
+
+  @media (min-width: variables.$tablet-width) {
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  @media (min-width: variables.$desktop-width) {
+    justify-self: start;
+  }
+}
+
+.additional-product__button {
+  @media (min-width: variables.$tablet-width) {
+    grid-area: button;
+  }
+}

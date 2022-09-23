@@ -4,11 +4,14 @@
 
 /* blocks */
 @use "./blocks/about.scss";
+@use "./blocks/additional-product.scss";
+@use "./blocks/additional-products.scss";
 @use "./blocks/button.scss";
 @use "./blocks/contacts.scss";
 @use "./blocks/copyright.scss";
 @use "./blocks/example.scss";
 @use "./blocks/index-header.scss";
+@use "./blocks/main-catalog.scss";
 @use "./blocks/main-footer.scss";
 @use "./blocks/main-header.scss";
 @use "./blocks/main-index.scss";
@@ -16,4 +19,6 @@
 @use "./blocks/menu.scss";
 @use "./blocks/page.scss";
 @use "./blocks/partnership.scss";
+@use "./blocks/product.scss";
+@use "./blocks/show-more.scss";
 @use "./blocks/social.scss";

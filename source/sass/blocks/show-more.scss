@@ -1,0 +1,114 @@
+@use "./global/variables.scss";
+
+.show-more {
+  position: relative;
+  padding: 25px 20px 25px;
+
+  @media (max-width: variables.$mobile-width-only) {
+    &::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      height: 1px;
+      background-color: variables.$white;
+    }
+  }
+
+  @media (min-width: variables.$tablet-width) {
+    display: grid;
+    grid-template-rows: max-content;
+    align-items: start;
+    justify-items: center;
+    padding: 50px 37px 38px 38px;
+    box-sizing: border-box;
+    border: 2px solid variables.$white--lighten;
+  }
+
+  @media (min-width: variables.$desktop-width) {
+    padding: 50px 37px 38px;
+  }
+}
+
+.show-more__title {
+  position: relative;
+  margin-top: 0;
+  margin-bottom: 8px;
+  padding-top: 53px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  color: variables.$gray--darkest;
+  text-align: center;
+  text-transform: uppercase;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 2px;
+    height: 30px;
+    background-color: variables.$gray--lightest;
+    transform: translateX(-50%);
+
+    @media (min-width: variables.$tablet-width) {
+      height: 60px;
+    }
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 2px;
+    height: 30px;
+    background-color: variables.$gray--lightest;
+    transform: translateX(-50%) rotate(90deg);
+
+    @media (min-width: variables.$tablet-width) {
+      height: 60px;
+    }
+  }
+
+  @media (min-width: variables.$tablet-width) {
+    max-width: 70%;
+    margin-bottom: 23px;
+    padding-top: 108px;
+    font-size: 20px;
+    line-height: 22px;
+  }
+
+  @media (min-width: variables.$desktop-width) {
+    max-width: 85%;
+  }
+}
+
+.show-more__text {
+  margin-top: 0;
+  margin-bottom: 21px;
+  font-family: "Arial", sans-serif;
+  font-size: 12px;
+  line-height: 16px;
+  color: variables.$gray--dark;
+  text-align: center;
+
+  @media (min-width: variables.$tablet-width) {
+    max-width: 70%;
+    margin-bottom: 0;
+    font-size: 16px;
+    line-height: 18px;
+  }
+
+  @media (min-width: variables.$desktop-width) {
+    max-width: unset;
+  }
+}
+
+.show-more__button {
+  @media (min-width: variables.$tablet-width) {
+    margin-top: auto;
+  }
+}

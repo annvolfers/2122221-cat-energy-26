@@ -3,21 +3,39 @@
 .button {
   display: inline-block;
   width: 100%;
-  padding: 11px;
   box-sizing: border-box;
-  color: variables.$white--lightest;
-  background-color: variables.$green;
   text-align: center;
   text-transform: uppercase;
   text-decoration: none;
 
-  @media (min-width: variables.$tablet-width) {
-    padding: 17px;
-    font-size: 20px;
-    line-height: 20px;
+  &--index {
+    padding: 11px;
+    color: variables.$white--lightest;
+    background-color: variables.$green;
+
+    &:hover,
+    &:focus {
+      background-color: variables.$green--dark;
+    }
+
+    &:active {
+      color: rgba(variables.$white--lightest, 0.3);
+    }
+
+    @media (min-width: variables.$tablet-width) {
+      padding: 17px;
+      font-size: 20px;
+      line-height: 20px;
+    }
   }
 
   &--primary {
+    padding: 10px;
+    font-size: 16px;
+    line-height: 20px;
+    color: variables.$white--lightest;
+    background-color: variables.$green;
+
     &:hover,
     &:focus {
       background-color: variables.$green--dark;
@@ -28,5 +46,20 @@
     }
   }
 
-  // &--secondary {}
+  &--secondary {
+    padding: 10px;
+    font-size: 16px;
+    line-height: 20px;
+    color: variables.$gray--dark;
+    background-color: variables.$white--lighten;
+
+    &:hover,
+    &:focus {
+      background-color: variables.$white;
+    }
+
+    &:active {
+      color: rgba(variables.$gray--dark, 0.3);
+    }
+  }
 }

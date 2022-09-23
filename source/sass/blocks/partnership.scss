@@ -1,5 +1,4 @@
 @use "./global/variables.scss";
-@use "./global/base.scss";
 
 .partnership {
   @media (min-width: variables.$desktop-width) {
@@ -12,7 +11,7 @@
   grid-template-columns: repeat(2, 1fr);
   justify-content: space-between;
   padding: 26px 24px 26px 20px;
-  background-color: variables.$white--lightest;
+  background-color: variables.$white--lighten;
 
   @media (min-width: variables.$tablet-width) {
     align-items: center;
@@ -29,9 +28,14 @@
     max-height: 300px;
     padding: 58px 80px 61px;
     box-sizing: border-box;
+    background-color: variables.$white--lightest;
     transform: translateY(-51%);
     overflow-y: auto;
   }
+}
+
+.partnership--index .partnership__text-wrapper {
+  background-color: variables.$white--lightest;
 }
 
 .partnership__title {

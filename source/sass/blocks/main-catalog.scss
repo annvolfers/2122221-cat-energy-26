@@ -1,0 +1,61 @@
+@use "./global/variables.scss";
+@use "./global/base.scss";
+
+.main-catalog {
+  overflow-x: hidden;
+}
+
+.main-catalog__header {
+  margin: 0;
+  position: relative;
+  padding: 27px 20px 42px;
+
+  @include base.container;
+
+  @media (max-width: variables.$mobile-width-only) {
+    &::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      height: 1px;
+      background-color: variables.$white;
+    }
+  }
+
+  @media (min-width: variables.$tablet-width) {
+    padding: 63px 30px 163px;
+  }
+
+  @media (min-width: variables.$desktop-width) {
+    padding: 76px 110px 165px;
+  }
+}
+
+.main-catalog__products {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+
+  @include base.container;
+
+  @media (min-width: variables.$tablet-width) {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 324px);
+    justify-content: center;
+    gap: 142px 60px;
+    padding: 0 30px;
+  }
+
+  @media (min-width: variables.$desktop-width) {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 245px);
+    gap: 144px 80px;
+    padding: 0 110px;
+  }
+}
+
+.main-catalog__additional {
+  @include base.container;
+}

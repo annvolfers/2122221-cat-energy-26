@@ -1,0 +1,153 @@
+@use "./global/variables.scss";
+
+.field {
+  display: flex;
+  align-items: center;
+
+  &--details {
+    gap: 14px;
+
+    @media (min-width: variables.$tablet-width) {
+      gap: 19px;
+    }
+  }
+
+  &--contacts {
+    gap: 10px;
+
+    @media (min-width: variables.$tablet-width) {
+      gap: 18px;
+    }
+  }
+}
+
+.field__label {
+  font-size: 16px;
+  color: variables.$gray--dark;
+  text-transform: uppercase;
+
+  @media (min-width: variables.$tablet-width) {
+    font-size: 20px;
+    line-height: 30px;
+  }
+}
+
+.field__wrapper {
+  position: relative;
+  display: grid;
+  flex-grow: 1;
+}
+
+.field__input {
+  flex-grow: 1;
+  padding: 13px 14px 14px;
+  font-family: inherit;
+  font-size: 16px;
+  line-height: 18px;
+  color: variables.$gray--dark;
+  border: none;
+  outline: 1px solid variables.$white--darken;
+  text-transform: uppercase;
+
+  &:hover {
+    outline: 1px solid variables.$gray--lighten;
+  }
+
+  &:focus {
+    outline: 2px solid variables.$gray--dark;
+  }
+
+  &--error,
+  &--error:hover,
+  &--error:focus {
+    outline: 2px solid variables.$red;
+  }
+
+  &::placeholder {
+    color: inherit;
+  }
+
+  &--icon {
+    padding: 12px 35px 13px 14px;
+  }
+
+  @media (min-width: variables.$tablet-width) {
+    padding: 10px 20px;
+    font-size: 20px;
+    line-height: 30px;
+  }
+}
+
+.field__icon {
+  position: absolute;
+  color: variables.$gray--darken;
+  pointer-events: none;
+
+  &--email {
+    top: 16px;
+    right: 14px;
+
+    @media (min-width: variables.$tablet-width) {
+      top: 17px;
+      right: 17px;
+    }
+  }
+
+  &--phone {
+    top: 13px;
+    right: 13px;
+
+    @media (min-width: variables.$tablet-width) {
+      top: 15px;
+      right: 18px;
+    }
+  }
+}
+
+.field__input:focus ~ .field__icon {
+  color: variables.$green;
+}
+
+.field__input--error ~ .field__icon,
+.field__input--error:focus ~ .field__icon {
+  color: variables.$red;
+}
+
+.field__textarea {
+  height: 150px;
+  padding: 9px 12px 9px 15px;
+  box-sizing: border-box;
+  font-family: inherit;
+  font-size: 16px;
+  line-height: 18px;
+  color: variables.$gray--dark;
+  border: none;
+  outline: 1px solid variables.$white--darken;
+  resize: none;
+  text-transform: uppercase;
+
+  &:hover {
+    outline: 1px solid variables.$gray--lighten;
+  }
+
+  &:focus {
+    outline: 2px solid variables.$gray--dark;
+  }
+
+  &--error,
+  &--error:hover,
+  &--error:focus {
+    outline: 2px solid variables.$red;
+  }
+
+  &::placeholder {
+    color: inherit;
+  }
+
+  @media (min-width: variables.$tablet-width) {
+    height: 172px;
+    padding: 9px 20px;
+    font-size: 20px;
+    line-height: 30px;
+  }
+}

@@ -4,9 +4,13 @@
   display: inline-block;
   width: 100%;
   box-sizing: border-box;
+  font-family: inherit;
+  border: none;
+  outline: none;
   text-align: center;
   text-transform: uppercase;
   text-decoration: none;
+  cursor: pointer;
 
   &--index {
     padding: 11px;

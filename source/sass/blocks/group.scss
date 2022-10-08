@@ -1,0 +1,202 @@
+@use "./global/variables.scss";
+
+.group {
+  display: grid;
+  margin: 0;
+  padding: 0;
+  border: none;
+
+  &--info {
+    margin-bottom: 26px;
+
+    @media (min-width: variables.$tablet-width) {
+      margin-bottom: 75px;
+      padding: 0 67px 0 70px;
+    }
+
+    @media (min-width: variables.$desktop-width) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 80px;
+      margin-bottom: 69px;
+      padding: 0 110px;
+    }
+  }
+
+  &--contacts {
+    padding: 0 20px;
+    margin-bottom: 24px;
+
+    @media (min-width: variables.$tablet-width) {
+      margin-bottom: 66px;
+      padding: 0 65px 0 70px;
+    }
+
+    @media (min-width: variables.$desktop-width) {
+      margin-bottom: 68px;
+      padding: 0 110px;
+    }
+  }
+
+  &--comment {
+    margin-bottom: 24px;
+    padding: 0 20px;
+
+    @media (min-width: variables.$tablet-width) {
+      margin-bottom: 66px;
+      padding: 0 68px 0 70px;
+    }
+
+    @media (min-width: variables.$desktop-width) {
+      margin-bottom: 69px;
+      padding: 0 110px;
+    }
+  }
+
+  &--additional {
+    margin-bottom: 34px;
+    padding: 0 20px;
+
+    @media (min-width: variables.$tablet-width) {
+      margin-bottom: 54px;
+      padding: 0 70px;
+    }
+
+    @media (min-width: variables.$desktop-width) {
+      margin-bottom: 60px;
+      padding: 0 110px;
+    }
+  }
+}
+
+.group__list {
+  display: grid;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+
+  &--details {
+    gap: 14px 0;
+    margin-bottom: 24px;
+    padding: 0 20px;
+
+    @media (min-width: variables.$tablet-width) {
+      gap: 22px 0;
+      margin-bottom: 73px;
+      padding: 0;
+    }
+
+    @media (min-width: variables.$desktop-width) {
+      margin-bottom: 0;
+    }
+  }
+
+  &--program {
+    gap: 12px 0;
+    padding: 22px 20px 19px;
+    border: 1px solid variables.$white--darken;
+
+    @media (max-width: variables.$mobile-width-only) {
+      border-right: none;
+      border-left: none;
+    }
+
+    @media (min-width: variables.$tablet-width) {
+      padding: 24px 28px 26px;
+    }
+  }
+
+  &--contacts {
+    gap: 16px 0;
+
+    @media (min-width: variables.$tablet-width) {
+      gap: 22px 0;
+    }
+
+    @media (min-width: variables.$tablet-width) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 80px;
+    }
+  }
+
+  &--additional {
+    gap: 13px 0;
+
+    @media (min-width: variables.$tablet-width) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 32px 58px;
+    }
+
+    @media (min-width: variables.$desktop-width) {
+      grid-template-columns: repeat(4, 1fr);
+      gap: 32px 80px;
+    }
+  }
+}
+
+.group__item {
+  justify-self: start;
+}
+
+.group__title {
+  position: relative;
+  justify-self: start;
+  margin-bottom: 36px;
+  padding: 0;
+  font-size: 24px;
+  line-height: 26px;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 16px;
+    left: calc(100% + 22px);
+    width: 10000%;
+    height: 2px;
+    background-color: variables.$green;
+
+    @media (min-width: variables.$tablet-width) {
+      top: 22px;
+      left: calc(100% + 39px);
+    }
+  }
+
+  &::before {
+    @media (min-width: variables.$tablet-width) {
+      content: "";
+      position: absolute;
+      top: 22px;
+      right: calc(100% + 39px);
+      width: 10000%;
+      height: 2px;
+      background-color: variables.$green;
+    }
+  }
+
+  @media (min-width: variables.$tablet-width) {
+    margin-bottom: 77px;
+    font-size: 36px;
+    line-height: 36px;
+  }
+}
+
+.group__title br {
+  @media (min-width: variables.$tablet-width) {
+    display: none;
+  }
+}
+
+.group--comment .group__title {
+  margin-bottom: 38px;
+
+  @media (min-width: variables.$tablet-width) {
+    margin-bottom: 77px;
+  }
+}
+
+.group--additional .group__title {
+  margin-bottom: 32px;
+
+  @media (min-width: variables.$tablet-width) {
+    margin-bottom: 57px;
+  }
+}

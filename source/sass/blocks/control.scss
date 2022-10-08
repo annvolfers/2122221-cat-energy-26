@@ -1,0 +1,98 @@
+@use "./global/variables.scss";
+
+.control {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  cursor: pointer;
+
+  &--disabled {
+    pointer-events: none;
+  }
+
+  @media (min-width: variables.$tablet-width) {
+    gap: 20px;
+  }
+}
+
+.control__mark {
+  position: relative;
+  flex-shrink: 0;
+  width: 30px;
+  height: 30px;
+  box-sizing: border-box;
+  border: 1px solid variables.$gray--lighten;
+
+  &:hover,
+  &:focus {
+    border: 1px solid variables.$gray--light;
+  }
+
+  @media (min-width: variables.$tablet-width) {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.control--radio .control__mark {
+  border-radius: 50%;
+}
+
+.control .control__input:checked ~ .control__mark {
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 14px;
+    transform: translateX(-50%) translateY(-50%);
+
+    @media (min-width: variables.$tablet-width) {
+      height: 18px;
+    }
+  }
+}
+
+.control--radio .control__input:checked ~ .control__mark {
+  &::before {
+    width: 14px;
+    border-radius: 50%;
+    background-color: variables.$green;
+
+    @media (min-width: variables.$tablet-width) {
+      width: 18px;
+    }
+  }
+}
+
+.control--checkbox .control__input:checked ~ .control__mark {
+  &::before {
+    width: 18px;
+    background-image: url("../img/form/check.svg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+
+    @media (min-width: variables.$tablet-width) {
+      width: 24px;
+    }
+  }
+}
+
+.control--disabled .control__mark {
+  opacity: 0.3;
+}
+
+.control__label {
+  font-size: 16px;
+  color: variables.$gray--darken;
+  text-transform: uppercase;
+
+  @media (min-width: variables.$tablet-width) {
+    font-size: 20px;
+    line-height: 30px;
+  }
+}
+
+.control--disabled .control__label {
+  opacity: 0.3;
+}

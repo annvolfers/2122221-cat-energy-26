@@ -1,0 +1,21 @@
+@use "./global/variables.scss";
+@use "./global/base.scss";
+
+.main-form {
+  overflow-x: hidden;
+}
+
+.main-form__header {
+  margin: 0;
+  padding: 27px 20px 38px;
+
+  @include base.container;
+
+  @media (min-width: variables.$tablet-width) {
+    padding: 62px 68px 55px;
+  }
+
+  @media (min-width: variables.$desktop-width) {
+    padding: 74px 110px 56px;
+  }
+}

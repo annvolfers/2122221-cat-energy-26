@@ -1,0 +1,67 @@
+@use "./global/variables.scss";
+@use "./global/base.scss";
+
+.form {
+  @include base.container;
+}
+
+.form__title {
+  margin: 0;
+  margin-bottom: 39px;
+  padding: 0 20px;
+  font-weight: 400;
+  font-size: 14px;
+  text-transform: uppercase;
+
+  @media (min-width: variables.$tablet-width) {
+    margin-bottom: 67px;
+    padding: 0 70px;
+    font-size: 20px;
+    line-height: 30px;
+  }
+
+  @media (min-width: variables.$desktop-width) {
+    padding: 0 110px;
+  }
+}
+
+.form__wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7px 0;
+  padding: 0 20px 18px;
+
+  @media (min-width: variables.$tablet-width) {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 0 61px;
+    padding: 0 70px 73px;
+  }
+
+  @media (min-width: variables.$desktop-width) {
+    gap: 0 81px;
+    padding: 0 110px 81px;
+  }
+}
+
+.form__submit {
+  @media (min-width: variables.$tablet-width) {
+    padding: 16px;
+    max-width: 282px;
+    font-size: 20px;
+  }
+
+  @media (min-width: variables.$desktop-width) {
+    max-width: 568px;
+  }
+}
+
+.form__legend {
+  font-family: "Arial", sans-serif;
+  line-height: 16px;
+
+  @media (min-width: variables.$tablet-width) {
+    font-size: 16px;
+  }
+}

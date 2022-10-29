@@ -42,11 +42,10 @@ const scripts = () => {
 }
 
 // Images
-const optimizeImages = (done) => {
-  gulp.src('source/img/**/*.{jpg,png}')
+const optimizeImages = () => {
+  return gulp.src('source/img/**/*.{jpg,png}')
     .pipe(squoosh())
     .pipe(gulp.dest('build/img'));
-  done();
 }
 
 const copyImages = () => {
@@ -94,9 +93,8 @@ const copy = (done) => {
 }
 
 // Clean
-const clean = (done) => {
-  del('build');
-  done();
+const clean = () => {
+  return del('build');
 }
 
 // Server
@@ -133,13 +131,11 @@ const compileProject = (done) => {
 }
 
 // Build
-export const build = (done) => {
-  gulp.series(
-    clean,
-    copy,
-    optimizeImages
-  )(done);
-};
+export const build = gulp.series(
+  clean,
+  // copy,
+  // optimizeImages
+);
 
 // Default
 export default gulp.series(

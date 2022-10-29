@@ -257,7 +257,7 @@
 }
 
 .example__divider:hover .example__divider-toggle,
-.example__divider:active .example__divider-toggle {
+.example__divider:focus .example__divider-toggle {
   border-color: variables.$green;
 }
 

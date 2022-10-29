@@ -121,20 +121,24 @@ const watcher = () => {
   gulp.watch('source/*.html', gulp.series(html)).on('change', browser.reload);
 }
 
+const compileProject = (done) => {
+  gulp.parallel(
+    styles,
+    html,
+    scripts,
+    svg,
+    sprite,
+    createWebp
+  )(done);
+}
+
 // Build
 export const build = (done) => {
   gulp.series(
     clean,
     copy,
     optimizeImages,
-    gulp.parallel(
-      styles,
-      html,
-      scripts,
-      svg,
-      sprite,
-      createWebp
-    )
+    compileProject
   )(done);
 };
 

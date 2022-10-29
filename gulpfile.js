@@ -80,8 +80,8 @@ const sprite = () => {
 }
 
 // Copy
-const copy = (done) => {
-  gulp.src([
+const copy = () => {
+  return gulp.src([
     'source/fonts/*.{woff2,woff}',
     'source/*.ico',
     'source/*.webmanifest'
@@ -89,7 +89,6 @@ const copy = (done) => {
     base: 'source'
   })
     .pipe(gulp.dest('build'));
-  done();
 }
 
 // Clean
@@ -119,7 +118,11 @@ const watcher = () => {
   gulp.watch('source/*.html', gulp.series(html)).on('change', browser.reload);
 }
 
-const compileProject = (done) => {
+// Build
+export const build = gulp.series(
+  clean,
+  copy,
+  optimizeImages,
   gulp.parallel(
     styles,
     html,
@@ -127,14 +130,7 @@ const compileProject = (done) => {
     svg,
     sprite,
     createWebp
-  )(done);
-}
-
-// Build
-export const build = gulp.series(
-  clean,
-  // copy,
-  // optimizeImages
+  )
 );
 
 // Default
@@ -142,7 +138,14 @@ export default gulp.series(
   clean,
   copy,
   copyImages,
-  compileProject,
+  gulp.parallel(
+    styles,
+    html,
+    scripts,
+    svg,
+    sprite,
+    createWebp
+  ),
   gulp.series(
     server,
     watcher

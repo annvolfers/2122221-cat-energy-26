@@ -23,8 +23,7 @@
   box-sizing: border-box;
   border: 1px solid variables.$gray--lighten;
 
-  &:hover,
-  &:focus {
+  &:hover {
     border: 1px solid variables.$gray--light;
   }
 
@@ -32,6 +31,10 @@
     width: 40px;
     height: 40px;
   }
+}
+
+.control__input:focus + .control__mark {
+  border: 1px solid variables.$gray--light;
 }
 
 .control--radio .control__mark {

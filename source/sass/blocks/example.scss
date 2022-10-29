@@ -231,7 +231,7 @@
   cursor: pointer;
 
   &:hover,
-  &:focus {
+  &:focus-within {
     background-color: variables.$green;
   }
 
@@ -256,8 +256,9 @@
   cursor: pointer;
 }
 
-.example__divider:hover .example__divider-toggle,
-.example__divider:focus .example__divider-toggle {
+.example__divider-toggle:focus,
+.example__divider:hover .example__divider-toggle {
+  outline: none;
   border-color: variables.$green;
 }
 
@@ -271,7 +272,7 @@
 }
 
 .example__divider:hover .example__divider-arrows,
-.example__divider:focus .example__divider-arrows {
+.example__divider-toggle:focus .example__divider-arrows {
   color: variables.$green;
 }
 

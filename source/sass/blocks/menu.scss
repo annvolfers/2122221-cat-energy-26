@@ -185,6 +185,8 @@
 
   &:hover,
   &:focus {
+    outline: none;
+
     &::after {
       transform: scaleX(1.3);
       transform-origin: center left;

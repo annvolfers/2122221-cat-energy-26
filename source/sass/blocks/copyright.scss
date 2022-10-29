@@ -16,6 +16,10 @@
   text-decoration: none;
 }
 
+.copyright__link:focus {
+  outline: none;
+}
+
 .copyright__text {
   margin: 0;
   font-family: "Arial", sans-serif;

@@ -67,6 +67,7 @@
 
   &:hover,
   &:focus {
+    outline: none;
     opacity: 0.8;
   }
 
@@ -136,6 +137,7 @@
 
   &:hover,
   &:focus-visible {
+    outline: none;
     opacity: 0.6;
   }
 
@@ -254,6 +256,7 @@
 
   &:hover,
   &:focus {
+    outline: none;
     opacity: 0.6;
   }
 

@@ -53,12 +53,14 @@ function onSliderDividerMove(evt) {
 }
 
 function onSliderDividerEnd(evt) {
-  if (evt.type === 'touchend') {
-    document.body.style.overflow = 'unset';
-  }
+  if (isMoveable) {
+    if (evt.type === 'touchend') {
+      document.body.style.overflow = 'unset';
+    }
 
-  dividerPositionInPercentage = newDividerPositionInPercentage;
-  isMoveable = false;
+    dividerPositionInPercentage = newDividerPositionInPercentage;
+    isMoveable = false;
+  }
 }
 
 if (isMobile) {

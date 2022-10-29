@@ -42,10 +42,11 @@ const scripts = () => {
 }
 
 // Images
-const optimizeImages = () => {
-  return gulp.src('source/img/**/*.{jpg,png}')
+const optimizeImages = (done) => {
+  gulp.src('source/img/**/*.{jpg,png}')
     .pipe(squoosh())
     .pipe(gulp.dest('build/img'));
+  done();
 }
 
 const copyImages = () => {

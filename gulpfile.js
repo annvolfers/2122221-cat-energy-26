@@ -81,7 +81,7 @@ const sprite = () => {
 
 // Copy
 const copy = (done) => {
-  return gulp.src([
+  gulp.src([
     'source/fonts/*.{woff2,woff}',
     'source/*.ico',
     'source/*.webmanifest'

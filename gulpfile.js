@@ -94,9 +94,8 @@ const copy = (done) => {
 }
 
 // Clean
-const clean = (done) => {
-  del('build');
-  done();
+const clean = () => {
+  return del('build');
 }
 
 // Server
@@ -147,14 +146,7 @@ export default gulp.series(
   clean,
   copy,
   copyImages,
-  gulp.parallel(
-    styles,
-    html,
-    scripts,
-    svg,
-    sprite,
-    createWebp
-  ),
+  compileProject,
   gulp.series(
     server,
     watcher

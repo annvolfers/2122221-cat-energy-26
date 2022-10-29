@@ -5,6 +5,7 @@ const sliderWrapper = slider.querySelector('.example__slider-wrapper');
 const sliderFatCat = sliderWrapper.querySelector('.example__image-wrapper--fat-cat');
 const sliderThinCat = sliderWrapper.querySelector('.example__image-wrapper--thin-cat');
 const sliderDivider = sliderWrapper.querySelector('.example__divider');
+const sliderDividerButton = sliderDivider.querySelector('button');
 
 let isMoveable = false;
 let dividerPositionInPercentage = 50;
@@ -16,6 +17,7 @@ function onSliderDividerStart(evt) {
   switch (evt.type) {
     case 'touchstart':
       dividerPosition = evt.touches[0].clientX;
+      sliderDividerButton.focus();
       break;
     case 'mousedown':
       dividerPosition = evt.x;

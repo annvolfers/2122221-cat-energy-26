@@ -93,8 +93,9 @@ const copy = (done) => {
 }
 
 // Clean
-const clean = () => {
-  return del('build');
+const clean = (done) => {
+  del('build');
+  done();
 }
 
 // Server

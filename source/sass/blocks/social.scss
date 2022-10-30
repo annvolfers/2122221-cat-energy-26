@@ -32,6 +32,10 @@
   list-style-type: none;
 }
 
+.social__link {
+  -webkit-tap-highlight-color: transparent;
+}
+
 .social__icon {
   color: variables.$gray;
 }

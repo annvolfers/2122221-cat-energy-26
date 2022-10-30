@@ -11,6 +11,7 @@
   text-transform: uppercase;
   text-decoration: none;
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
 
   &--index {
     padding: 11px;

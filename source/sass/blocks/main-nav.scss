@@ -60,6 +60,7 @@
 .main-nav__logo-link {
   display: flex;
   padding: 23px 0;
+  -webkit-tap-highlight-color: transparent;
 
   &:not([href]) {
     pointer-events: none;
@@ -134,6 +135,7 @@
   border: none;
   background-color: transparent;
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
 
   &:hover,
   &:focus-visible {
@@ -253,6 +255,7 @@
   color: inherit;
   text-transform: uppercase;
   text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
 
   &:hover,
   &:focus {

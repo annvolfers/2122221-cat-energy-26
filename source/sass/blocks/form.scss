@@ -46,9 +46,6 @@
 }
 
 .form__submit {
-  outline: 2px solid variables.$red;
-  border-radius: 20px;
-
   @media (min-width: variables.$tablet-width) {
     padding: 16px;
     max-width: 282px;
